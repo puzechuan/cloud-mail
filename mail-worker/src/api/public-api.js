@@ -1,7 +1,6 @@
 import app from '../hono/hono';
 import result from '../model/result';
 import publicService from '../service/public-service';
-import userContext from '../security/user-context';
 
 app.post('/public/genToken', async (c) => {
 	const data = await publicService.genToken(c, await c.req.json());

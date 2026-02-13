@@ -16,7 +16,7 @@ database_id = "a4c1a63a-6ef5-4e6d-8e8c-b6d9e8feb810"
 
 [[kv_namespaces]]
 binding = "kv"
-id = "2io01d4b299e481b9de060ece9e7785c"
+id = "5bdd036118a345ba9e97311bdb2c9753"
 
 #[[r2_buckets]]
 #binding = "r2"
