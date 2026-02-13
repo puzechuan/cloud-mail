@@ -1,6 +1,7 @@
 import app from '../hono/hono';
 import result from '../model/result';
 import publicService from '../service/public-service';
+import userContext from '../security/user-context';
 
 app.post('/public/genToken', async (c) => {
 	const data = await publicService.genToken(c, await c.req.json());
@@ -16,3 +17,8 @@ app.post('/public/addUser', async (c) => {
 	await publicService.addUser(c, await c.req.json());
 	return c.json(result.ok());
 });
+
+app.post('/pulic/addRegCode', async (c) => {
+	await publicService.addRegCode(c, await c.req.json(), 1);
+	return c.json(result.ok());
+})

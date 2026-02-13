@@ -171,6 +171,38 @@ const publicService = {
 		return {token: uuid}
 	},
 
+	async addRegCode(c, params, userId) {
+
+		let {code,roleId,count,expireTime} = params;
+
+		if (!code) {
+			throw new BizError(t('emptyRegKey'));
+		}
+
+		if (!count) {
+			throw new BizError(t('emptyRegKey'));
+		}
+
+		if (!expireTime) {
+			throw new BizError(t('emptyRegKeyExpire'));
+		}
+
+		const regKeyRow = await orm(c).select().from(regKey).where(eq(regKey.code, code)).get();
+
+		if (regKeyRow) {
+			throw new BizError(t('isExistRegKye'));
+		}
+
+		const roleRow = roleService.selectById(c, roleId);
+		if (!roleRow) {
+			throw new BizError(t('roleNotExist'));
+		}
+
+		expireTime = formatDetailDate(expireTime)
+
+		await orm(c).insert(regKey).values({code,roleId,count,userId,expireTime}).run();
+	},
+
 	async verifyUser(c, params) {
 
 		const { email, password } = params

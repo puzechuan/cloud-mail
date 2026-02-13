@@ -18,7 +18,8 @@ const exclude = [
 	'/public/genToken',
 	'/telegram',
 	'/test',
-	'/oauth'
+	'/oauth',
+	'/pulic/addRegCode'
 ];
 
 const requirePerms = [
