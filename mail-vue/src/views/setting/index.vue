@@ -18,7 +18,7 @@
             </span>
           </span>
         </div>
-      </div>
+      </div>0
       <div class="item">
         <div>{{$t('emailAccount')}}</div>
         <div>{{ userStore.user.email }}</div>
