@@ -147,6 +147,7 @@ const zh = {
     autoRefreshDesc: '轮询请求服务器获取最新邮件',
     sendEmail: '邮件发送',
     resendToken: 'Resend Token',
+    QQMailAuthCode: 'QQ邮箱授权码',
     oss: '对象存储',
     osDomain: '访问域名',
     ossDomainDesc: '如果是KV存储不要填',
