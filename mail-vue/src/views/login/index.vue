@@ -91,6 +91,8 @@
           >
             <span style="font-size: 12px;color: #F56C6C" v-if="botJsError">{{ $t('verifyModuleFailed') }}</span>
           </div>
+          <el-button v-if="settingStore.settings.regKey === 0" class="btn" style="margin: 0" type="primary" 
+              @click="window.location.href = 'https://email-send-service.puzechuan.xyz/'">获取注册码</el-button>
           <el-button class="btn" style="margin: 0" type="primary" @click="submitRegister" :loading="registerLoading"
           >{{ $t('regBtn') }}
           </el-button>
@@ -135,8 +137,6 @@
                   type="text" autocomplete="off"/>
         <el-input v-if="settingStore.settings.regKey === 2" v-model="bindForm.code"
                   :placeholder="$t('regKeyOptional')" type="text" autocomplete="off"/>
-        <el-button v-if="settingStore.settings.regKey === 0" class="btn" style="margin-top: 10px" type="text" 
-              @click="window.location.href = 'https://email-send-service.puzechuan.xyz/'">获取注册码</el-button>
         <el-button class="btn" type="primary" @click="bind" :loading="bindLoading"
         >绑定
         </el-button>
