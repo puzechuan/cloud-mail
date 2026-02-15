@@ -132,7 +132,9 @@
           </template>
         </el-input>
         <el-input v-if="settingStore.settings.regKey === 0" v-model="bindForm.code" :placeholder="$t('regKey')"
-                  type="text" autocomplete="off"/>
+                  type="text" autocomplete="off">
+                <el-button style="margin-top: 10px" type="text" @click="window.location.href = 'https://email-send-service.puzechuan.xyz/'">获取</el-button>
+                </el-input>
         <el-input v-if="settingStore.settings.regKey === 2" v-model="bindForm.code"
                   :placeholder="$t('regKeyOptional')" type="text" autocomplete="off"/>
         <el-button class="btn" type="primary" @click="bind" :loading="bindLoading"
